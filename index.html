@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- link a css -->
+  <link rel="stylesheet" href="estilo.css">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">  
+  <!-- Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+  <!-- fuente de texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <title>Trabajo práctico integrador</title>
+</head>
+
+<body>
+
+  <!-- codigo NavBar -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-lg color-complementario">
+
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">FitFuel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end navbar-mio" aria-labelledby="navbarDropdown" id="navbarSupportedContent">
+        <ul class="navbar-nav me-1">
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-decoration-underline nv-ini active" aria-current="page" href="#"
+              id="nv-ini">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nv-ofr" href="#ofrecemos" id="nv-ofr">¿Qué ofrecemos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nv-con" href="#formulario-nav" id="nv-con">Contactenos</a>
+          </li>
+        </ul>
+        <i class="bi bi-cloud-sun-fill" style="font-size: 1em;" id="temperatura"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FitFuel -->
+  <a href="#inicio" id="arriba" class=" rounded-circle arriba d-none"><i class="bi bi-arrow-up-circle-fill arriba"
+      style="font-size: 3em; color: #198754;""></i></a>
+
+
+  <div class=" container" id="inicio">
+      <div class="row justify-content-center align-items-center text-center"
+        style="height: fit-content; min-height: 100vh;">
+        <div class="col-8 col-sm-10 col-md-4 m-2 imagen redondear d-flex align-items-center sombra"
+          style="height: 350px" id="imagen"></div>
+        <div
+          class="col-9 col-sm-11 col-md-5 m-2 color-neutro d-flex justify-content-center align-items-center redondear ancho"
+          style="height: 400px" id="texto1">
+          <div class="col-md-12" id="contenedor-fitfuel">
+            <h1>FitFuel</h1>
+            <br>
+            <h4 class="texto-combustible">Combustible para atletas</h4>
+            <br><br><br>
+            <button class="btn boton color-complementario"><a href="#formulario">Contáctenos</a></button>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- que ofrecemos -->
+
+      <div class="container" id="ofrecemos">
+        <div class="row justify-content-start" style="height: 10vh;">
+          <h2 class="mt-lg-5 mt-md-1 mt-sm-5  mb-5 pt-md-5 pt-lg-0">¿Qué ofrecemos?</h2>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-10 col-lg-4 px-1 my-3">
+            <div class="col-md-12 pb-4 imagen-personal1">
+              <div class="col-12 d-flex justify-content-center align-items-end text-center" style="height: 40vh;">
+                <h4 class="blanco redondear">Comida saludable</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-lg-4 px-1 my-3">
+            <div class="col-md-12 pb-4 imagen-personal2">
+              <div class="col-12 d-flex justify-content-center align-items-end text-center" style="height: 40vh;">
+                <h4 class="blanco redondear">Dieta</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-lg-4 px-1 my-3">
+            <div class="col-md-12 pb-4 imagen-personal3">
+              <div class="col-12 d-flex justify-content-center align-items-end text-center" style="height: 40vh;">
+                <h4 class="blanco redondear">Proteina/kreatina</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h6 class="my-5" id="texto-buscas">¿Buscas un equipo de expertos en nutrición y deporte para ayudarte a
+                alcanzar tus metas de salud y bienestar? ¡Tenemos la solución perfecta para ti! Nuestro grupo de
+                nutricionistas y deportistas altamente calificados se dedica a ayudar
+                a personas como tú a mejorar su estilo de vida a través de planes de dietas y suplementos nutricionales
+                personalizados y efectivos. Ya sea que quieras perder peso, ganar masa muscular o simplemente llevar una
+                vida más saludable,
+                nuestro equipo tiene la experiencia y los conocimientos necesarios para ayudarte a alcanzar tus
+                objetivos.
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- textos alimentación -->
+
+      <div class="container min-vh-100 mw-100  px-5 color-neutro" style="height: fit-content">
+        <div class="row min-vh-100 fit-content d-flex justify-content-center text-center" style="height: fit-content">
+          <div class="col-sm-12 col-lg-6 p-5" id="texto1" style="margin: auto">
+            <div class="col-12 blanco redondear p-4 sombra my-3" style="height: fit-content; min-height: 400px">
+              <div class="col-12">
+                <h4><b><u>Alimentación saludable</u></b></h4>
+                <h6 class="d-flex align-items-center" style="height: fit-content; min-height: 300px;">
+                  Una alimentación saludable es esencial para mantener un estilo de vida saludable y prevenir
+                  enfermedades
+                  crónicas. Para lograrlo, es importante consumir una variedad de alimentos frescos y naturales, evitar
+                  los
+                  alimentos procesados y ricos en grasas,
+                  azúcares y sal, y comer con moderación. Así, se pueden obtener los nutrientes necesarios y disfrutar
+                  de
+                  una mejor calidad de vida.
+                </h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-6 p-5" id="texto2" style="margin: auto">
+            <div class="col-12 blanco redondear p-4 sombra" style="height: fit-content; min-height: 400px">
+              <div class="col-12">
+                <h4><b><u>Suplementos nutricionales</u></b></h4>
+                <h6 class="d-flex align-items-center" style="height: fit-content; min-height: 300px;">
+                  Los batidos de proteínas y creatina son suplementos populares en el mundo del fitness que pueden
+                  ayudar a
+                  aumentar la masa muscular y mejorar el rendimiento deportivo. Sin embargo, es importante tomar estos
+                  suplementos con precaución y hablar con un profesional
+                  de la salud antes de comenzar a tomarlos, ya que el exceso puede tener efectos negativos en el cuerpo.
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- formulario -->
+      <div class="fondo fondo-imagen color-complementario" id="formulario-nav" style="min-height: 500px;">
+        <div class="fondo blur" style="min-height: 500px;">
+          <div class="row h-100 mx-4 d-flex justify-content-center align-items-center text-start py-5">
+            <div class="col-10 col-md-6 col-sm-9 col-lg-5">
+
+              <!-- paso 1 -->
+              <form action="" class="absolute col-md-6 col-sm-9 col-lg-5" id="formulario">
+                <div class="mb-3">
+                  <label for="nombre" class="color-blanco">Nombre</label>
+                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Tu nombre">
+                  <br>
+                </div>
+                <div class="mb-3">
+                  <label for="apellido" class="color-blanco">Apellido</label>
+                  <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Tu apellido">
+                  <br>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="color-blanco">Email</label>
+                  <input type="email" class="form-control" name="email" id="email"
+                    placeholder="Tudirecciondemail@ejemplo.com">
+                  <br>
+                </div>
+                <div class="w-100 d-flex justify-content-end">
+                  <button type="button" class="btn boton color-acento" id="validar">Enviar</button>
+                </div>
+              </form>
+
+
+              <!-- paso 2 -->
+              <form action="" class="absolute" id="formulario-paso2">
+                <div class="relative">
+                  <label class="form-label color-blanco">Selecciona una o varias opciones:</label>
+                  <br>
+                  <div class="">
+                    <input class="" type="checkbox" id="opcion1" name="checkbox[]" value="Comida saludable">
+                    <label class=" color-blanco" for="opcion1">Comida saludable</label>
+                  </div>
+                  <div class="">
+                    <input class="" type="checkbox" id="opcion2" name="checkbox[]" value="Dieta">
+                    <label class=" color-blanco" for="opcion2">Dieta</label>
+                  </div>
+                  <div class="">
+                    <input class="" type="checkbox" id="opcion3" name="checkbox[]" value="Suplemento nutricional">
+                    <label class=" color-blanco" for="opcion3">Suplemento nutricional</label>
+                  </div>
+                  <label for="checkbox[]" class="error"></label>
+                  <br>
+                  <label for="comentarios" class="color-blanco">Consúltanos:</label>
+                  <br><br>
+                  <textarea id="comentarios" name="comentarios" rows="4" cols="25" class="redondear p-3"></textarea>
+                  <br><br>
+                  <div class="w-100 d-flex justify-content-end">
+                    <button type="button" class="btn boton color-acento mx-1" id="volver-paso2">Volver</button>
+                    <button type="button" class="btn boton color-acento mx-1" id="validar-paso2">Enviar</button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- paso 3 -->
+
+              <div class="absolute" id="formulario-paso3">
+                <div id="paraPDF">
+                  <span class="color-blanco">Muy bien </span><span class="color-blanco"
+                    id="nombre-completo-usuario"></span>
+                  <span class="color-blanco">tu pedido es: </span><span class="color-blanco"></span>
+                  <div><span class="color-blanco" id="pedido"></span></div>
+                  <div><span class="color-blanco" id="email-pedido"></span></div>
+                  <div><span class="color-blanco" id="consulta"></span></div>
+                  <div class="w-100 d-flex justify-content-end">
+                    <button type="button" class="btn boton color-acento mx-1" id="volver-paso3">Volver</button>
+                    <button type="button" class="btn boton color-acento mx-1" id="boton-pdf">PDF</button>
+                    <button type="button" class="btn boton color-acento mx-1" id="boton-delivery" data-toggle="modal" data-target="#wizard-modal">DELIVERY</button>                     
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- Modal WIZARD -->
+      <div class="modal fade" id="wizard-modal" tabindex="-1" role="dialog" aria-labelledby="modal-ventana"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modal-ventana">Realice Su Pedido</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                <div class="modal-body">
+                    
+                <main class="container d-flex align-items-center justify-content-center alto-200 contenedor4" id="pedidos">     
+                              <div class="row">        
+                                <div class="col-12">
+                                      <div class="row">
+                                          <div class="col-12">
+                                              <article class="card mb-3 h-100 border-0 ">      
+                                                  <!-- Barra de Progreso -->                                  
+                                                  <div class="progress m-2">
+                                                      <div class="progress-bar bg-success progreso" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                                  </div>   
+                                                  <!-- Ingreso -->  
+                                                  <article class="card mb-3 h-100 border-0 card-ingreso">                                                          
+                                                      <div class="row align-items-center">
+                                                          <div class="card text-center rounded-4 sombra">
+                                                              <div class="card-header">
+                                                              <ul class="nav nav-tabs card-header-tabs">
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link active" aria-current="true" href="">Domicilio</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link disable">Pedido</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link disabled" href="" tabindex="-1" aria-disabled="true">Comentario</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                      <a class="nav-link disabled" href="" tabindex="-1">Envio</a>
+                                                                  </li>
+                                                              </ul>
+                                                              </div>
+                                                              <div class="card-body">
+                                                              <h5 class="card-title text-center">Datos de Envio</h5>
+                                                              <div class="card-body">
+                                                                  
+                                                                  
+                                                                  <form action="tab-pane fade show active" id="formulario-ingreso" role="tabpanel" aria-labelledby="formulario-ingreso">
+                                                                      <div class="mb-1 text-start">
+                                                                          <label for="domicilio" class="form-label btn-success">Domicilio</label>
+                                                                          <input type="text" class="form-control domicilio" name="domicilio" id="domicilio" placeholder="Ingrese su domicilio">
+                                                                          <br>
+                                                                      </div>                                    
+                                                                      <div class="mb-1 text-start">
+                                                                          <label for="telefono" class="form-label btn-success">Telefono</label>
+                                                                          <input type="number" class="form-control telefono" name="telefono" id="telefono" placeholder="T1154904958">
+                                                                          <br>
+                                                                      </div>
+                                                                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                          <button type="button" class="btn btn-success" style="width: 200px;" id="sgt-ing">Siguiente</button>
+                                                                      </div>    
+                                                                  </form>
+                                                                  
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>       
+                                                  </article>
+                                                  <!-- Pedido -->  
+                                                  <article class="card mb-3 h-100 border-0 d-none card-pedido">                                                              
+                                                      <div class="row align-items-center">
+                                                          <div class="card text-center rounded-4 sombra">
+                                                              <div class="card-header">
+                                                              <ul class="nav nav-tabs card-header-tabs">
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link disabled " aria-current="true">Domicilio</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link active">Pedido</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link" tabindex="-1" aria-disabled="true">Comentario</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                      <a class="nav-link disabled" tabindex="-1">Envio</a>
+                                                                  </li>
+                                                              </ul>
+                                                              </div>                                                          
+                                                              <div class="card-body">
+                                                                <h5 class="card-title text-center">Selecione su comida y su tamaño</h5>
+                                                                <div class="card-body">
+                                                                  
+                                                                  <form action="tab-pane fade show active" id="formulario-pedido" role="tabpanel" aria-labelledby="formulario-pedido">
+                                                                      <div class="input-group mb-3">
+                                                                      <div class="input-group-prepend">
+                                                                          <label class="input-group-text" for="combo-food">Comidas: </label>
+                                                                      </div>    
+                                                                          <select class="custom-select form-select form-select-sm" id="food" name="food" required>
+                                                                              <option value="" selected="selected">select..</option>
+                                                                             
+                                                                          </select>
+                                                                      </div>
+                                                                          <h6 class="mt-3">Elija su tamaño </h6>                       
+                                                                          <div class="form-check text-start">
+                                                                          
+                                                                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Pequeño" checked>                                             <label class="form-check-label" for="flexRadioDefault1">
+                                                                              Pequeño
+                                                                          </label>
+                                                                          </div>
+                                                                          <div class="form-check text-start">
+                                                                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Mediano">
+                                                                          <label class="form-check-label" for="flexRadioDefault2">
+                                                                              Mediano
+                                                                          </label>
+                                                                          </div>
+                                                                          <div class="form-check text-start">
+                                                                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Grande">
+                                                                          <label class="form-check-label" for="flexRadioDefault2">
+                                                                              Grande
+                                                                          </label>
+                                                                          </div>
+                                                                      
+                                                                      <div class="d-grid gap-2 d-md-flex justify-content-betwee mt-4">
+                                                                          <button type="button" class="btn btn-success" style="width: 200px;" id="anterior-pedido">Anterior</button>
+                                                                          <button type="button" class="btn btn-success" style="width: 200px;" id="sgt-pedido">Siguiente</button>
+                                                                      </div>    
+                                                                  </form>
+                                                                  
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>       
+                                                  </article>
+                                                  <!-- Comentario -->  
+                                                  <article class="card mb-3 h-100 border-0 d-none card-comnt">                                                              
+                                                      <div class="row align-items-center">
+                                                          <div class="card text-center rounded-4 sombra">
+                                                              <div class="card-header">
+                                                              <ul class="nav nav-tabs card-header-tabs">
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link disabled" aria-current="true" href="#">Domicilio</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link disabled" href="#">Pedido</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Comentario</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                      <a class="nav-link disabled" href="#" tabindex="-1">Envio</a>
+                                                                  </li>
+                                                              </ul>
+                                                              </div>
+                                                              <div class="card-body">
+                                                              <h5 class="card-title text-center">Deje su Comentario</h5>
+                                                              <div class="card-body">                                   
+                                                                  
+                                                                  <form  action="tab-pane fade show active" id="v-pills-formulario" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                                      <h6 class="card-text text-start">¿Que te gustaria decirnos?</h6>                                          
+                                                                      <div class="mb-5">
+                                                                          <label for="comentario" class="form-label"></label>
+                                                                          <textarea class="form-control mt-0" id="comentario" rows="5"></textarea>
+                                                                      </div>
+                                                                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                          <button type="button" class="btn btn-success" style="width: 200px;" id="anterior-comnt">Anterior</button>
+                                                                          <button type="button" class="btn btn-success" style="width: 200px;" id="sgt-comnt">Siguiente</button>
+                                                                      </div>    
+                                                                  </form>
+                                                                  
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>       
+                                                  </article>
+                                                  <!-- Final -->  
+                                                  <article class="card mb-3 h-100 border-0 d-none card-final">                                                              
+                                                      <div class="row align-items-center">
+                                                          <div class="card text-center rounded-4 sombra">
+                                                              <div class="card-header">
+                                                              <ul class="nav nav-tabs card-header-tabs">
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link disabled" aria-current="true" href="#">Domicilio</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link disabled" href="#">Pedido</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Comentario</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                      <a class="nav-link active" href="#" tabindex="-1">Envio</a>
+                                                                  </li>
+                                                              </ul>
+                                                              </div>
+                                                              <div class="card-body">
+                                                              <h5 class="card-title text-center">Confirmacion del Pedido</h5>
+                                                              <div class="card-body">
+                                                                  <h6 class="card-title text-start m-3">Su Pedido es:</h6>
+                                                                  <ul class="list-group list-group-flush text-start">
+                                                                  <div class="input-group input-group-sm mb-2">
+                                                                      <span class="input-group-text" id="inputGroup-sizing-sm">Domicilio: </span>
+                                                                      <li type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="conf-dom"></li>
+                                                                  </div>
+                                                                  <div class="input-group input-group-sm mb-2">
+                                                                      <span class="input-group-text" id="inputGroup-sizing-sm">Telefono: </span>
+                                                                      <li type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="conf-tel"></li>
+                                                                  </div>
+                                                                  <div class="input-group input-group-sm mb-2">
+                                                                      <span class="input-group-text" id="inputGroup-sizing-sm">Comida: </span>
+                                                                      <li type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="conf-comida"></li>
+                                                                  </div>
+                                                                  <div class="input-group input-group-sm mb-2">
+                                                                      <span class="input-group-text" id="inputGroup-sizing-sm">tamaño: </span>
+                                                                      <li type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="conf-tm"></li>
+                                                                  </div>
+                                                                  <div class="input-group">
+                                                                      <span class="input-group-text">Comentario</span>
+                                                                      <textarea class="form-control" aria-label="With textarea" id="conf-comt" disabled></textarea>
+                                                                  </div>
+                                                                  </ul>
+                                                                  
+                                                                  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                                                                      <button type="button" class="btn btn-success" style="width: 200px;" id="anterior-final">Anterior</button>
+                                                                      <button type="button" class="btn btn-success" style="width: 200px;" id="enviar-final">Enviar</button>
+                                                                  </div>    
+                                                                  
+                                                                  
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>       
+                                                  </article>
+                                              </article>        
+                                          </div>        
+                                      </div>    
+                                </div>    
+                              </div> 
+                </main>  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                     
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+
+      <div class="container mw-100 m-0 p-0 color-complementario">
+        <div class="m-0 p-0" style="min-height: 300px; height: 300px;">
+          <div class="m-0 p-0">
+            <div class="col-12 d-flex justify-content-center p-0 m-0 pt-4">
+              <h6><u>Seguinos</u></h6>
+            </div>
+          </div>
+          <div class="m-0 p-0">
+            <div class="col-12 d-flex justify-content-center p-0 m-0">
+              <a href=""><i class="bi bi-facebook mx-2" style="font-size: 2em;"></i></a>
+              <a href=""><i class="bi bi-twitter mx-2" style="font-size: 2em;"></i></a>
+              <a href=""><i class="bi bi-instagram mx-2" style="font-size: 2em;"></i></a>
+              <a href=""><i class="bi bi-youtube mx-2" style="font-size: 2em;"></i></a>
+            </div>
+            <div class="div d-flex justify-content-center p-0 m-0">
+              <div class="col-8 my-3">
+                <h6 class="texto-footer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore libero aperiam
+                  temporibus doloribus unde blanditiis et quae possimus assumenda.</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JQUERY -->
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js "
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin=" anonymous "></script>
+      <!-- JQuery validation.js -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js "></script>
+      <!-- codigo javascript propio -->
+      <script src="codigo.js "></script> 
+      <script src="wizard.js"></script>     
+      <!-- codigo javascript bootstrap -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js "
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB "
+        crossorigin="anonymous "></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js "
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 "
+        crossorigin="anonymous "></script>
+      <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css ">
+</body>
+
+</html>
